@@ -9,12 +9,12 @@ class Category(models.Model):
 
 class Quizzes(models.Model):
     class Meta:
-        verbose_name = _("Quiz")
-        verbose_name_plural = _("Quizzes")
+        verbose_name = _("Викторина")
+        verbose_name_plural = _("Викторины")
         ordering = ['id']
 
     title = models.CharField(max_length=255, default=_(
-        "New Quiz"), verbose_name=_("Quiz Title"))
+        "New Quiz"), verbose_name=_("Название викторины"))
     category = models.ForeignKey(
         Category, default=1, on_delete=models.DO_NOTHING)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -34,8 +34,8 @@ class Updated(models.Model):
 class Question(Updated):
 
     class Meta:
-        verbose_name = _("Question")
-        verbose_name_plural = _("Questions")
+        verbose_name = _("Вопрос")
+        verbose_name_plural = _("Вопросы")
         ordering = ['id']
 
     SCALE = (
@@ -53,14 +53,14 @@ class Question(Updated):
     quiz = models.ForeignKey(
         Quizzes, related_name='question', on_delete=models.DO_NOTHING)
     technique = models.IntegerField(
-        choices=TYPE, default=0, verbose_name=_("Type of Question"))
-    title = models.CharField(max_length=255, verbose_name=_("Title"))
+        choices=TYPE, default=0, verbose_name=_("Тип вопроса"))
+    title = models.CharField(max_length=255, verbose_name=_("Название"))
     difficulty = models.IntegerField(
-        choices=SCALE, default=0, verbose_name=_("Difficulty"))
+        choices=SCALE, default=0, verbose_name=_("Сложность"))
     date_created = models.DateTimeField(
-        auto_now_add=True, verbose_name=_("Date Created"))
+        auto_now_add=True, verbose_name=_("Дата создания"))
     is_active = models.BooleanField(
-        default=False, verbose_name=_("Active Status"))
+        default=False, verbose_name=_("Активный статус"))
 
     def __str__(self):
         return self.title
@@ -69,14 +69,14 @@ class Question(Updated):
 class Answer(Updated):
 
     class Meta:
-        verbose_name = _("Answer")
-        verbose_name_plural = _("Answers")
+        verbose_name = _("Ответ")
+        verbose_name_plural = _("Ответы")
         ordering = ['id']
 
     question = models.ForeignKey(
         Question, related_name='answer', on_delete=models.DO_NOTHING)
     answer_text = models.CharField(
-        max_length=255, verbose_name=_("Answer Text"))
+        max_length=255, verbose_name=_("Текст ответа"))
     is_right = models.BooleanField(default=False)
 
     def __str__(self):
