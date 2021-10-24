@@ -68,7 +68,7 @@ export const QuizSelect = () => {
           color="textPrimary"
           gutterBottom
         >
-          Quizzes
+          Пытаннi
         </Typography>
         <Typography
           variant="h5"
@@ -76,9 +76,7 @@ export const QuizSelect = () => {
           color="textSecondary"
           component="p"
         >
-          We've got all the quizzes you love to binge! The world's largest
-          selection of quizzes. Choose from 1+ quizzes with new additions
-          published every month
+          У нас ёсць пытаннi, якiя Вам спадабаюцца.
         </Typography>
       </Container>
       <Container maxWidth="md" component="main">

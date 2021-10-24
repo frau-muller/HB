@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import Quiz, RandomQuestion, QuizQuestion
-from django.urls import path
-from .views import Quiz, RandomQuestion, QuizQuestion
+from .views import Quiz, RandomQuestionTopic, StartQuiz
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 app_name='history'
 
