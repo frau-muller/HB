@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-app_name='history'
+app_name = 'history'
 
 urlpatterns = [
     path('', Quiz.as_view(), name='history'),
