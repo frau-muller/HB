@@ -14,7 +14,10 @@ export default function Header() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default" elevation={0}>
+      <AppBar
+          position="static"
+          color="default"
+          elevation={0}>
         <Toolbar>
           <Typography
             variant="h6"
